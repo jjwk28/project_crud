@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import index, blog, posting, new_post
+from main.views import index, blog, posting, new_post, remove_post
 
 # 이미지 업로드
 from django.conf.urls.static import static
@@ -30,6 +30,7 @@ urlpatterns = [
     # URL:8000/blog/숫자로 접속하면 게시글-세부페이지(posting)
     path('blog/<int:pk>', posting, name='posting'),
     path('blog/new_post/', new_post),
+    path('blog/<int:pk>/remove/', remove_post),
 ]
 
 # 이미지 URL 설정
